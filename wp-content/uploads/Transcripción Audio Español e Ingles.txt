@@ -1,0 +1,15 @@
+0.000000	5.000000	 La experiencia de visualización del sitio web puede variar según el dispositivo utilizado,
+5.000000	8.000000	 ya sea celular, tableta o computadora,
+8.000000	13.000000	 y los navegadores como Google Chrome, Firefox o Microsoft Edge.
+13.000000	17.500000	 Algunos efectos visuales están optimizados únicamente para computadoras,
+17.500000	21.500000	 por lo que es posible que no se muestren correctamente en celulares o tabletas.
+21.500000	27.500000	 Para una experiencia más cómoda, se recomienda activar el modo horizontal en dispositivos móviles.
+
+
+
+
+The website viewing experience may vary depending on the device being used, whether it is a mobile phone, tablet, or computer, as well as the browser, such as Google Chrome, Firefox, or Microsoft Edge.
+
+Some visual effects are optimized specifically for computers, so they may not display correctly on mobile phones or tablets.
+
+For a more comfortable experience, it is recommended to enable landscape mode on mobile devices.

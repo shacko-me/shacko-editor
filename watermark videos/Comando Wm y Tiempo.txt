@@ -1,0 +1,34 @@
+ffmpeg -i "correccion-audio-ruido-blanco-volumen-bajo.webm" -loop 1 -i "watermark.png" -filter_complex "[1:v]format=rgba,colorchannelmixer=aa=0.04[wm];[0:v][wm]overlay=0:0:format=auto[v]" -map "[v]" -map 0:a? -c:v libvpx-vp9 -deadline realtime -cpu-used 8 -row-mt 1 -tile-columns 2 -frame-parallel 1 -crf 28 -b:v 0 -c:a copy -t 23.20 "output.webm"
+
+
+Para opacidad:
+[1:v]format=rgba,colorchannelmixer=aa=0.04[wm]
+
+Para duración video:
+copy -t 23.20
+
+
+
+ffmpeg -i "creacion-sticker-whatsapp.webm" -loop 1 -i "watermark.png" -filter_complex "[1:v]format=rgba,colorchannelmixer=aa=0.04[wm];[0:v][wm]overlay=0:0:format=auto[v]" -map "[v]" -map 0:a? -c:v libvpx-vp9 -deadline realtime -cpu-used 8 -row-mt 1 -tile-columns 2 -frame-parallel 1 -crf 28 -b:v 0 -c:a copy -t 39.20 "output.webm"
+
+
+
+
+
+
+30 fotogramas iniciales, eliminarlos, para colocar un png por esos 30 fotogramas eliminados
+
+168 fps video todo en uno, eliminar, para montar imagen ahi
+
+
+
+
+
+
+
+ffmpeg -i "videoguia-shacko-editor.webm" -loop 1 -i "Anuncio.png" -filter_complex "[0:v]trim=start_frame=30,setpts=PTS-STARTPTS[video];[1:v]format=rgba,trim=duration=1.25,setpts=PTS-STARTPTS[img];[img][video]concat=n=2:v=1:a=0[outv]" -map "[outv]" -map 0:a? -c:v libvpx-vp9 -crf 28 -b:v 0 -deadline realtime -cpu-used 8 -row-mt 1 -tile-columns 2 -frame-parallel 1 -c:a copy "output.webm"
+
+
+
+
+ffmpeg -i "servicios-digitales-audio-video-todo-en-uno.webm" -loop 1 -i "Inicio.png" -filter_complex "[0:v]trim=start_frame=168,setpts=PTS-STARTPTS[rest];[1:v]format=rgba,trim=duration=7,setpts=PTS-STARTPTS[anuncio];[anuncio][rest]concat=n=2:v=1:a=0[outv]" -map "[outv]" -map 0:a? -c:v libvpx-vp9 -deadline realtime -cpu-used 8 -row-mt 1 -tile-columns 2 -frame-parallel 1 -crf 28 -b:v 0 -c:a copy "output.webm"
